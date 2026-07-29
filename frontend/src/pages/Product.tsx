@@ -57,10 +57,11 @@ Thank you.
     `.trim(),
       );
 
-      window.open(
-        `https://wa.me/${distributor.phone}?text=${message}`,
-        "_blank",
-      );
+      // window.open(
+      //   `https://wa.me/${distributor.phone}?text=${message}`,
+      //   "_blank",
+      // );
+      window.location.href = `https://wa.me/${distributor.phone}?text=${message}`;
     } catch (err) {
       console.error(err);
     } finally {
