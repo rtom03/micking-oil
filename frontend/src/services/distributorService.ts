@@ -8,12 +8,29 @@ export async function findNearestDistributor() {
   }
 
   // Get user's current position
+  // const position = await new Promise<GeolocationPosition>((resolve, reject) => {
+  //   navigator.geolocation.getCurrentPosition(resolve, reject, {
+  //     enableHighAccuracy: true,
+  //     timeout: 10000,
+  //     maximumAge: 0,
+  //   });
+  // });
   const position = await new Promise<GeolocationPosition>((resolve, reject) => {
-    navigator.geolocation.getCurrentPosition(resolve, reject, {
-      enableHighAccuracy: true,
-      timeout: 10000,
-      maximumAge: 0,
-    });
+    const watchId = navigator.geolocation.watchPosition(
+      (position) => {
+        navigator.geolocation.clearWatch(watchId);
+        resolve(position);
+      },
+      (error) => {
+        navigator.geolocation.clearWatch(watchId);
+        reject(error);
+      },
+      {
+        enableHighAccuracy: false,
+        timeout: 20000,
+        maximumAge: 300000,
+      },
+    );
   });
 
   const { latitude, longitude } = position.coords;
