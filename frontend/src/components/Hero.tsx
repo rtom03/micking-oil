@@ -29,11 +29,11 @@ const Hero = () => {
           </div>
 
           {/* Subhead — supports the image's headline, doesn't repeat it */}
-          <p className="max-w-md text-[15px] leading-relaxed text-[#C9CCD1] sm:text-base">
+          {/* <p className="max-w-md text-[15px] leading-relaxed text-[#C9CCD1] sm:text-base">
             Sludge builds up quietly. By the time it shows on the dashboard, the
             damage is already done. Genuine engine oil, changed on schedule, is
             the cheapest insurance your engine will ever get.
-          </p>
+          </p> */}
 
           {/* CTAs */}
           <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
