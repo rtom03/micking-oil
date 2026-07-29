@@ -32,7 +32,7 @@ const Header = () => {
 
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 sm:px-10 lg:px-14">
         {/* Logo */}
-        <Link to="#home" className="flex items-center gap-3">
+        <Link to="/" className="flex items-center gap-3">
           <img
             className="flex h-11 w-11 items-center justify-center  font-serif text-lg font-bold text-white"
             src="/micking.webp"

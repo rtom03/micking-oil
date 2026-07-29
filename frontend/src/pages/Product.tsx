@@ -3,6 +3,8 @@ import { Link, useParams } from "react-router-dom";
 import { PRODUCTS, type ProductVariant } from "./../constants/product";
 import { findNearestDistributor } from "../services/distributorService";
 import Loader from "../components/Loader";
+import DistributorModal from "../components/DistributorModal";
+import type { Distributor } from "../services/distributor";
 
 const nairaFormatter = new Intl.NumberFormat("en-NG", {
   style: "currency",
@@ -17,6 +19,13 @@ const Product = () => {
   const [selectedVariant, setSelectedVariant] = useState<ProductVariant | null>(
     product?.variants[0] ?? null,
   );
+
+  const [modalOpen, setModalOpen] = useState(false);
+
+  const [nearestDistributor, setNearestDistributor] = useState<{
+    distributor: Distributor;
+    distance: number;
+  } | null>(null);
 
   // const handleBuy = async () => {
   //   setLoading(true);
@@ -33,14 +42,67 @@ const Product = () => {
   //   }
   // };
 
+  //   const handleBuy = async () => {
+  //     setLoading(true);
+
+  //     try {
+  //       const { distributor } = await findNearestDistributor();
+
+  //       const message = encodeURIComponent(
+  //         `
+  // Hello,
+
+  // I'd like to get more information about this product.
+
+  // Product: ${product?.name}
+  // Size: ${selectedVariant?.size}
+  // Price: ${nairaFormatter.format(selectedVariant?.price!)}
+  // Grade: ${product?.grade}
+  // API Rating: ${product?.apiRating}
+  // Volume: ${selectedVariant?.volumeLitres}L
+
+  // Distributor's Info: ${distributor.location}
+
+  // Thank you.
+  //     `.trim(),
+  //       );
+
+  //       // window.open(
+  //       //   `https://wa.me/${distributor.phone}?text=${message}`,
+  //       //   "_blank",
+  //       // );
+  //       window.location.href = `https://wa.me/${distributor.phone}?text=${message}`;
+  //     } catch (err) {
+  //       console.error(err);
+  //     } finally {
+  //       setLoading(false);
+  //     }
+  //   };
+  // Hooks must run unconditionally — guard the "not found" return after this.
+
   const handleBuy = async () => {
     setLoading(true);
 
     try {
-      const { distributor } = await findNearestDistributor();
+      const result = await findNearestDistributor();
 
-      const message = encodeURIComponent(
-        `
+      setNearestDistributor(result);
+
+      setModalOpen(true);
+    } catch (err) {
+      console.error(err);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const continueToWhatsapp = () => {
+    if (!nearestDistributor) return;
+
+    const { distributor } = nearestDistributor;
+
+    const message = encodeURIComponent(
+      `
 Hello,
 
 I'd like to get more information about this product.
@@ -52,23 +114,12 @@ Grade: ${product?.grade}
 API Rating: ${product?.apiRating}
 Volume: ${selectedVariant?.volumeLitres}L
 
-
 Thank you.
-    `.trim(),
-      );
+`.trim(),
+    );
 
-      // window.open(
-      //   `https://wa.me/${distributor.phone}?text=${message}`,
-      //   "_blank",
-      // );
-      window.location.href = `https://wa.me/${distributor.phone}?text=${message}`;
-    } catch (err) {
-      console.error(err);
-    } finally {
-      setLoading(false);
-    }
+    window.location.href = `https://wa.me/${distributor.phone}?text=${message}`;
   };
-  // Hooks must run unconditionally — guard the "not found" return after this.
 
   if (!product || !selectedVariant) {
     return (
@@ -241,6 +292,13 @@ Thank you.
           </div>
         </div>
       </div>
+      <DistributorModal
+        open={modalOpen}
+        distributor={nearestDistributor?.distributor ?? null}
+        distance={nearestDistributor?.distance}
+        onClose={() => setModalOpen(false)}
+        onContinue={continueToWhatsapp}
+      />
     </section>
   );
 };
