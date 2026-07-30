@@ -18,7 +18,7 @@ const Hero = () => {
       <div className="absolute inset-0 z-10 flex flex-col justify-end px-6 pb-14 sm:px-10 sm:pb-16 lg:px-16">
         <div className="max-w-xl">
           {/* Signature element: pulsing diagnostic alert tag */}
-          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-[#F2A93B]/40 bg-black/40 px-3 py-1.5 backdrop-blur-sm">
+          {/* <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-[#F2A93B]/40 bg-black/40 px-3 py-1.5 backdrop-blur-sm">
             <span className="relative flex h-2 w-2">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#F2A93B] opacity-75 motion-reduce:animate-none" />
               <span className="relative inline-flex h-2 w-2 rounded-full bg-[#F2A93B]" />
@@ -26,7 +26,7 @@ const Hero = () => {
             {/* <span className="font-mono text-[11px] font-medium uppercase tracking-[0.15em] text-[#F2A93B]">
               Engine health alert · Lagos
             </span> */}
-          </div>
+          {/* </div>  */}
 
           {/* Subhead — supports the image's headline, doesn't repeat it */}
           {/* <p className="max-w-md text-[15px] leading-relaxed text-[#C9CCD1] sm:text-base">
