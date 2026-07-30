@@ -11,8 +11,8 @@ const Hero = () => {
       />
 
       {/* Legibility gradient — strongest at the bottom where the CTA sits */}
-      <div className="absolute inset-0 bg-gradient-to-t from-[#0B0C0E] via-[#0B0C0E]/40 to-transparent" />
-      <div className="absolute inset-0 bg-gradient-to-r from-[#0B0C0E]/30 via-transparent to-transparent" />
+      <div className="absolute inset-0 bg-linear-to-t from-[#0B0C0E] via-[#0B0C0E]/40 to-transparent" />
+      <div className="absolute inset-0 bg-linear-to-r from-[#0B0C0E]/30 via-transparent to-transparent" />
 
       {/* Content */}
       <div className="absolute inset-0 z-10 flex flex-col justify-end px-6 pb-14 sm:px-10 sm:pb-16 lg:px-16">
