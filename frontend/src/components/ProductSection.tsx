@@ -35,7 +35,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
 
 const ProductsSection = () => {
   return (
-    <section className="w-full bg-white py-6 sm:py-10">
+    <section className="w-full bg-white py-6 sm:py-10" id={"#shop"}>
       <h2 className="mb-6 px-4 text-center text-xl font-extrabold tracking-tight text-black sm:mb-8 sm:text-2xl md:mb-10 md:text-3xl">
         Buy from Your Nearest Distributor for Swift Delivery
       </h2>
