@@ -17,7 +17,7 @@ const ROW_2: LogoMarqueeItem[] = [
   { name: "Chisco", logo: "./chisco.png" },
   { name: "Ineh Mic", logo: "./ineh.png" },
   { name: "Sifax Group", logo: "./sifax.jpg" },
-  { name: "NAHCO Aviance", logo: "./nahco" },
+  { name: "NAHCO Aviance", logo: "./nahco.png" },
   { name: "ABC Transport" },
 ];
 
