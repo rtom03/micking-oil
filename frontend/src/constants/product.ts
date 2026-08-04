@@ -47,28 +47,28 @@ export const MICKING_SUPER_PLUS: Product = {
       label: "Gold Super +",
       size: "4L",
       volumeLitres: 4,
-      price: 0, // TODO: set real price
+      price: 30000, // TODO: set real price
       image: img4L5w30,
     },
     {
       label: "Gold Super +",
       size: "5L",
       volumeLitres: 5,
-      price: 0, // TODO: set real price
+      price: 36000, // TODO: set real price
       image: img5L5w30,
     },
     {
       label: "Gold Super +",
       size: "6L",
       volumeLitres: 6,
-      price: 0, // TODO: set real price
+      price: 43500, // TODO: set real price
       image: img6L5w30,
     },
     {
       label: "Max Super +",
       size: "1L",
       volumeLitres: 1,
-      price: 0, // TODO: set real price
+      price: 8000, // TODO: set real price
       image: img1L5w30,
     },
   ],
@@ -86,21 +86,21 @@ export const MICKING_GOLD_TOP: Product = {
       label: "Gold Top",
       size: "1L",
       volumeLitres: 1,
-      price: 0, // TODO: set real price
+      price: 8000, // TODO: set real price
       image: img1L5w20,
     },
     {
       label: "Gold Top",
       size: "5L",
       volumeLitres: 5,
-      price: 0, // TODO: set real price
+      price: 36000, // TODO: set real price
       image: img5L5w20,
     },
     {
       label: "Gold Top",
       size: "6L",
       volumeLitres: 6,
-      price: 0, // TODO: set real price
+      price: 43500, // TODO: set real price
       image: img6L5w20,
     },
   ],
@@ -121,21 +121,21 @@ export const MICKING_GOLD_PRIME_A: Product = {
       label: "Gold Prime A",
       size: "1L",
       volumeLitres: 1,
-      price: 0, // TODO: set real price
+      price: 8000, // TODO: set real price
       image: GP1L5w20,
     },
     {
       label: "Gold Prime A",
       size: "4L",
       volumeLitres: 4,
-      price: 0, // TODO: set real price
+      price: 30000, // TODO: set real price
       image: GP4L5w20,
     },
     {
       label: "Gold Prime A",
       size: "5L",
       volumeLitres: 5,
-      price: 0, // TODO: set real price
+      price: 36000, // TODO: set real price
       image: GP5L5w20,
     },
   ],
@@ -153,14 +153,14 @@ export const MICKING_GOLD_TOP_PLUS: Product = {
       label: "Gold Top +",
       size: "1L",
       volumeLitres: 1,
-      price: 0, // TODO: set real price
+      price: 8000, // TODO: set real price
       image: GT1L5w20,
     },
     {
       label: "Gold Top +",
       size: "5L",
       volumeLitres: 5,
-      price: 0, // TODO: set real price
+      price: 36000, // TODO: set real price
       image: GT5L5w20,
     },
   ],
