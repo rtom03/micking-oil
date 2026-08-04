@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import { PRODUCTS, type ProductVariant } from "./../constants/product";
+import { PRODUCTS, type ProductVariant } from "../constants/prodData";
 import { findNearestDistributor } from "../services/distributorService";
 import Loader from "../components/Loader";
 import DistributorModal from "../components/DistributorModal";

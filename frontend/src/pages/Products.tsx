@@ -3,7 +3,7 @@ import {
   PRODUCTS,
   type Product,
   type ProductVariant,
-} from "./../constants/product";
+} from "../constants/prodData";
 
 const nairaFormatter = new Intl.NumberFormat("en-NG", {
   style: "currency",

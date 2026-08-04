@@ -73,7 +73,7 @@ export const MICKING_SUPER_PLUS: Product = {
     },
   ],
 };
-
+// console.log(MICKING_SUPER_PLUS + "kkkk");
 export const MICKING_GOLD_TOP: Product = {
   slug: "micking-gold-top",
   name: "Micking Gold Top",

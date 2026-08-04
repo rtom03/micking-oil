@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { PRODUCTS, type Product } from "./../constants/product";
+import { PRODUCTS, type Product } from "../constants/prodData";
 
 interface ProductCardProps {
   product: Product;
@@ -10,12 +10,12 @@ const nairaFormatter = new Intl.NumberFormat("en-NG", {
   currency: "NGN",
   maximumFractionDigits: 0,
 });
-
+// console.log(JSON.parse(JSON.stringify(PRODUCTS)));
 const ProductCard = ({ product }: ProductCardProps) => {
   const coverImage = product.variants[0]?.image;
   const prices = product.variants.map((variant) => variant.price);
   const minPrice = Math.min(...prices);
-
+  // console.log(product);
   return (
     <Link to={`/products/${product.slug}`} className="block">
       {/* Natural aspect ratio — no forced square box, so there's no dead
